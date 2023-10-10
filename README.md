@@ -21,10 +21,10 @@ In summary, the scope of your Agile Project Management Tool project covers the e
 The Agile Project Management Tool project aims to develop a web-based software application that facilitates the efficient management of software development projects using Agile methodologies. This tool will provide a centralized platform for project managers, team members, and stakeholders to collaborate, plan, track progress, and continuously improve their software development efforts.
 
 ### Major project functionalities:
-The major system features:
-•	User Registration and Authentication: Users can register and log in securely.
-•	Project Creation and Management: Project managers can create, edit, and manage projects.
-•	Sprint Planning: Project managers can plan sprints with defined goals.
-•	Comments and Attachments: Users can discuss and share files within tasks and stories.
-•	Meetings Management: Users can schedule and document key project meetings.
-•	Task and User Story Management: Users can create, assign, and track tasks and user stories.
+The major system features:\
+•	User Registration and Authentication: Users can register and log in securely.\
+•	Project Creation and Management: Project managers can create, edit, and manage projects.\
+•	Sprint Planning: Project managers can plan sprints with defined goals.\
+•	Comments and Attachments: Users can discuss and share files within tasks and stories.\
+•	Meetings Management: Users can schedule and document key project meetings.\
+•	Task and User Story Management: Users can create, assign, and track tasks and user stories.\
