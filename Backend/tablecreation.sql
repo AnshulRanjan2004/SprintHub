@@ -55,3 +55,59 @@ CREATE TABLE Project_Budget(
     Budget int,
     Project_ID int
 ) COMMENT 'Project Budget Table';
+
+CREATE TABLE Team_Member(
+    Team_Member_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    Description VARCHAR(50),
+    USER_ID int,
+    Team_ID int
+) COMMENT 'Team Member Table';
+
+CREATE TABLE Team(
+    Team_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    Team_Name VARCHAR(50),
+    Team_Description VARCHAR(50)
+) COMMENT 'Team Table';
+
+CREATE TABLE Task(
+    Task_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    Task_Name VARCHAR(50),
+    Task_Description VARCHAR(50),
+    Task_Status VARCHAR(50),
+    Task_Priority VARCHAR(50),
+    Task_Start_Date DATE,
+    Task_End_Date DATE,
+    Sprint_ID int,
+    Attachment_ID int
+)
+
+CREATE TABLE Scrum_Meeting(
+    Meeting_ID int NOT NULL UNIQUE,
+    Meeting_Notes VARCHAR(50),
+    Meeting_Date DATE,
+    Sprint_ID int
+)
+
+CREATE TABLE Retrospective_Meeting(
+    Meeting_ID int NOT NULL UNIQUE,
+    Meeting_Notes VARCHAR(50),
+    Meeting_Date DATE,
+    Sprint_ID int
+)
+
+CREATE TABLE Comments(
+    Comment_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+    Comment_Task VARCHAR(50),
+    Comment_Timestamp DATE,
+    Comment_Task_ID int
+)
+
+CREATE TABLE Phone_Number(
+    Phone_Number VARCHAR(50),
+    USER_ID int
+)
+
+CREATE TABLE Acceptance_Criteria(
+    Acceptance_Criteria_Description VARCHAR(50),
+    Acceptance_Story_ID int
+)
