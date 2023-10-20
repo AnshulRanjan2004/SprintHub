@@ -79,3 +79,84 @@ INSERT INTO Phone_Number (Phone_Number, USER_ID) VALUES
 INSERT INTO Acceptance_Criteria (Acceptance_Criteria_Description, Acceptance_Story_ID) VALUES
     ('User can log in successfully', NULL),
     ('Database schema matches design', NULL);
+
+UPDATE USER SET Sprint_ID = 7 WHERE `Username` = 'janesmith';
+
+UPDATE USER SET Sprint_ID = 8 WHERE `Username` = 'bobjohnson';
+
+UPDATE Sprint SET MASTER_ID = 3 WHERE `Sprint_ID` = 7;
+
+UPDATE Sprint SET MASTER_ID = 4 WHERE `Sprint_ID` = 8;
+
+UPDATE Sprint SET MASTER_ID = 4 WHERE `Sprint_ID` = 9;
+
+UPDATE Sprint SET STORY_ID = 2 WHERE `Sprint_ID` = 8;
+
+UPDATE Sprint SET STORY_ID = 3 WHERE `Sprint_ID` = 9;
+
+UPDATE Story SET Attachement_ID = 1 WHERE `Story_ID` = 1;
+
+UPDATE Story SET Attachement_ID = 2 WHERE `Story_ID` = 3;
+
+UPDATE scrum_master SET USER_ID = 4 WHERE `MASTER_ID` = 3;
+
+UPDATE scrum_master SET USER_ID = 5 WHERE `MASTER_ID` = 4;
+
+ALTER TABLE Project
+DROP COLUMN Budget;
+
+UPDATE Project SET `Project_Story_ID` = 2 WHERE `Project_ID` = 3;
+
+UPDATE Project SET `Project_Story_ID` = 3 WHERE `Project_ID` = 4;
+
+UPDATE Project SET `Project_Sprint_ID` = 7 WHERE `Project_ID` = 3;
+
+UPDATE Project SET `Project_Sprint_ID` = 8 WHERE `Project_ID` = 4;
+
+UPDATE Project_Budget SET `Project_ID` = 3 WHERE `Budget` = 10000;
+
+UPDATE Project_Budget SET `Project_ID` = 4 WHERE `Budget` = 7500;
+
+UPDATE Team_Member SET `USER_ID` = 5 WHERE `Team_ID` = 1;
+
+UPDATE Team_Member SET `USER_ID` = 6 WHERE `Team_ID` = 2;
+
+UPDATE Team_Member SET `USER_ID` = 7 WHERE `Team_ID` = 3;
+
+UPDATE Team_Member SET `Team_ID` = 1 WHERE `USER_ID` = 5;
+
+UPDATE Team_Member SET `Team_ID` = 2 WHERE `USER_ID` = 6;
+
+UPDATE Team_Member SET `Team_ID` = 1 WHERE `USER_ID` = 7;
+
+UPDATE Task SET `Sprint_ID` = 7 WHERE `Task_ID` = 1;
+
+UPDATE Task SET `Sprint_ID` = 8 WHERE `Task_ID` = 2;
+
+UPDATE Task SET `Sprint_ID` = 9 WHERE `Task_ID` = 3;
+
+UPDATE Task SET `Attachment_ID` = 1 WHERE `Task_ID` = 1;
+
+UPDATE Task SET `Attachment_ID` = 2 WHERE `Task_ID` = 3;
+
+UPDATE Scrum_Meeting SET `Sprint_ID` = 7 WHERE `Meeting_ID` = 1;
+
+UPDATE Scrum_Meeting SET `Sprint_ID` = 8 WHERE `Meeting_ID` = 2;
+
+UPDATE Retrospective_Meeting SET `Sprint_ID` = 7 WHERE `Meeting_ID` = 1;
+
+UPDATE Retrospective_Meeting SET `Sprint_ID` = 8 WHERE `Meeting_ID` = 2;
+
+UPDATE Comments SET `Comment_Task_ID` = 1 WHERE `Comment_ID` = 1;
+
+UPDATE Comments SET `Comment_Task_ID` = 2 WHERE `Comment_ID` = 2;
+
+UPDATE Comments SET `Comment_Task_ID` = 3 WHERE `Comment_ID` = 3;
+
+UPDATE Phone_Number SET `USER_ID` = 4 WHERE `Phone_Number` = '123-456-7890';
+
+UPDATE Phone_Number SET `USER_ID` = 5 WHERE `Phone_Number` = '987-654-3210';
+
+UPDATE Acceptance_Criteria SET `Acceptance_Story_ID` = 1 WHERE `Acceptance_Criteria_Description` = 'User can log in successfully';
+
+UPDATE Acceptance_Criteria SET `Acceptance_Story_ID` = 2 WHERE `Acceptance_Criteria_Description` = 'Database schema matches design';
