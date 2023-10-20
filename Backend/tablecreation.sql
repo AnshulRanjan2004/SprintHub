@@ -111,3 +111,37 @@ CREATE TABLE Acceptance_Criteria(
     Acceptance_Criteria_Description VARCHAR(50),
     Acceptance_Story_ID int
 )
+
+ALTER TABLE User ADD FOREIGN KEY (Sprint_ID) REFERENCES Sprint(Sprint_ID);
+
+ALTER TABLE Sprint ADD FOREIGN KEY (MASTER_ID) REFERENCES Scrum_Master(MASTER_ID);
+
+ALTER TABLE Sprint ADD FOREIGN KEY (STORY_ID) REFERENCES Story(Story_ID);
+
+ALTER TABLE Story ADD FOREIGN KEY (Attachement_ID) REFERENCES Attachement(Attachement_ID);
+
+ALTER TABLE scrum_master ADD FOREIGN KEY (USER_ID) REFERENCES User(User_ID);
+
+ALTER TABLE Project ADD FOREIGN KEY (Project_Story_ID) REFERENCES Story(Story_ID);
+
+ALTER TABLE Project ADD FOREIGN KEY (Project_Sprint_ID) REFERENCES Sprint(Sprint_ID);
+
+ALTER TABLE Project_Budget ADD FOREIGN KEY (Project_ID) REFERENCES Project(Project_ID);
+
+ALTER TABLE Team_Member ADD FOREIGN KEY (USER_ID) REFERENCES User(User_ID);
+
+ALTER TABLE Team_Member ADD FOREIGN KEY (Team_ID) REFERENCES Team(Team_ID);
+
+ALTER TABLE Task ADD FOREIGN KEY (Sprint_ID) REFERENCES Sprint(Sprint_ID);
+
+ALTER TABLE Task ADD FOREIGN KEY (Attachment_ID) REFERENCES Attachement(Attachement_ID);
+
+ALTER TABLE Scrum_Meeting ADD FOREIGN KEY (Sprint_ID) REFERENCES Sprint(Sprint_ID);
+
+ALTER TABLE Retrospective_Meeting ADD FOREIGN KEY (Sprint_ID) REFERENCES Sprint(Sprint_ID);
+
+ALTER TABLE Comments ADD FOREIGN KEY (Comment_Task_ID) REFERENCES Task(Task_ID);
+
+ALTER TABLE Phone_Number ADD FOREIGN KEY (USER_ID) REFERENCES User(User_ID);
+
+ALTER TABLE Acceptance_Criteria ADD FOREIGN KEY (Acceptance_Story_ID) REFERENCES Story(Story_ID);
