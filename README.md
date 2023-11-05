@@ -1,4 +1,4 @@
-<img src="https://github.com/AnshulRanjan2004/SprintHub/assets/91585064/5e2761c6-e0ff-41a5-a146-4ebcdb3c97e4" width="200" height="200"> 
+<img src="https://github.com/AnshulRanjan2004/SprintHub/assets/91585064/c4d1daae-f023-400a-8f88-9a41b1f6f4c0" width="200" height="200"> 
 
 # SprintHub - Agile Project Management Tool
 Sprint Hub is a powerful Agile project management tool designed to streamline your software development projects. With features tailored for Scrum, Kanban, and Agile methodologies, Sprint Hub empowers teams to plan, execute, and optimize their projects with ease.
