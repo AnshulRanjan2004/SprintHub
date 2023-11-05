@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             background-color: #f5f5f5;
@@ -74,11 +75,20 @@
             margin: 20px 0;
         }
 
+        /* Logo Styling */
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            height: auto;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="header">
+        <img src="templates/logo.jpg" alt="Sprint Hub Logo" class="logo">
         <h1>Welcome to Sprint Hub</h1>
     </div>
 
