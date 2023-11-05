@@ -47,8 +47,16 @@ if (isset($_POST['submit'])) {
                         // Set a session variable to track the user's login state
                         $_SESSION['user_id'] = $row['User_ID'];
 
-                        // Redirect to the homepage or another logged-in page
-                        header('Location: index.php');
+                        // Fetch the user's role from the database
+                        $role = $row['Role'];
+
+                        if ($role === 'Admin') {
+                            // User is an admin, redirect to admin.php
+                            header('Location: admin.php');
+                        } else {
+                            // User is not an admin, redirect to user.php
+                            header('Location: user.php');
+                        }
                     } else {
                         echo 'Incorrect username or password. Please sign up or try again.';
                     }

@@ -79,38 +79,38 @@ CREATE TABLE Task(
     Task_End_Date DATE,
     Sprint_ID int,
     Attachment_ID int
-)
+);
 
 CREATE TABLE Scrum_Meeting(
     Meeting_ID int NOT NULL UNIQUE,
     Meeting_Notes VARCHAR(50),
     Meeting_Date DATE,
     Sprint_ID int
-)
+);
 
 CREATE TABLE Retrospective_Meeting(
     Meeting_ID int NOT NULL UNIQUE,
     Meeting_Notes VARCHAR(50),
     Meeting_Date DATE,
     Sprint_ID int
-)
+);
 
 CREATE TABLE Comments(
     Comment_ID int NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
     Comment_Task VARCHAR(50),
     Comment_Timestamp DATE,
     Comment_Task_ID int
-)
+);
 
 CREATE TABLE Phone_Number(
     Phone_Number VARCHAR(50),
     USER_ID int
-)
+);
 
 CREATE TABLE Acceptance_Criteria(
     Acceptance_Criteria_Description VARCHAR(50),
     Acceptance_Story_ID int
-)
+);
 
 ALTER TABLE User ADD FOREIGN KEY (Sprint_ID) REFERENCES Sprint(Sprint_ID);
 
