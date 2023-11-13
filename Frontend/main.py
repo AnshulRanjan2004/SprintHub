@@ -159,10 +159,22 @@ def user_page():
     elif selected_table == "Acceptance_Criteria":
         display_acceptance_criteria_table()
 
+def is_admin_logged_in():
+    admin_password = "Anshul@2004"
+    entered_password = st.text_input("Enter Admin Password", type="password")
+    
+    return entered_password == admin_password
+
 
 def admin_page():
     st.title("Admin Page")
 
+    if not is_admin_logged_in():
+        st.warning("Access denied. Please log in as an admin.")
+        return
+    
+    st.empty()
+    
     selected_table = st.selectbox("Select Table", ["Home", "User", "Sprint", "Story", "Attachement", "Scrum_Master", "Project", "Project_Budget", "Team_Member", "Team", "Task", "Scrum_Meeting", "Retrospective_Meeting", "Comments", "Phone_Number", "Acceptance_Criteria"])
 
     if selected_table == "Home":
