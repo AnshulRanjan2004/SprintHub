@@ -1,5 +1,6 @@
 import streamlit as st
 import mysql.connector
+from PIL import Image
 
 def create_connection():
     return mysql.connector.connect(
@@ -58,6 +59,11 @@ def handle_signup(name, username, password, role, sprint_id):
     connection.close()
 
 def home_page():
+    image = Image.open('Frontend/templates/logo.png')
+    left_co, cent_co,last_co = st.columns(3)
+    with cent_co:
+        st.image(image, width=200)  
+        
     st.markdown(
         """
         <style>
