@@ -1,5 +1,4 @@
-
--- Trigger to ensure end date is after start date for sprints
+-- Active: 1697515802955@@127.0.0.1@3306@sprinthub
 DELIMITER //
 CREATE TRIGGER EnsureSprintEndDateAfterStartDate
 BEFORE INSERT ON Sprint
