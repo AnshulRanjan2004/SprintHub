@@ -83,13 +83,24 @@ def home_page():
 
             h1 {
                 color: #660066;
-                font-size: 36px;
+                font-size: 42px;
+            }
+
+            h2 {
+                color: #660066;
+                font-size: 24px;
             }
 
             p {
                 font-size: 18px;
                 line-height: 1.6;
             }
+            .feature-box {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+        }
         </style>
         """,
         unsafe_allow_html=True
@@ -103,6 +114,22 @@ def home_page():
 
         <div class="container">
             <p>Sprint Hub is a powerful Agile project management tool designed to streamline your software development projects. With features tailored for Scrum, Kanban, and Agile methodologies, Sprint Hub empowers teams to plan, execute, and optimize their projects with ease.</p>
+        </div>
+            <div class="container">
+
+        <div class="feature-box">
+            <h2>Agile Project Management</h2>
+            <p>Efficiently manage your software development projects using Agile methodologies.</p>
+        </div>
+
+        <div class="feature-box">
+            <h2>Scrum & Kanban Support</h2>
+            <p>Customize your workflow with support for Scrum and Kanban methodologies.</p>
+        </div>
+
+        <div class="feature-box">
+            <h2>Optimize Your Projects</h2>
+            <p>Optimize your project execution and improve team collaboration.</p>
         </div>
         """
         ,
