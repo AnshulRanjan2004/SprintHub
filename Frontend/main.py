@@ -110,7 +110,55 @@ def home_page():
     )
 
 def user_page():
-    return
+    st.title("User Page")
+
+    selected_table = st.selectbox("Select Table", ["Home","Sprint", "Story", "Attachement", "Scrum_Master", "Project","Team_Member", "Team", "Task", "Scrum_Meeting", "Retrospective_Meeting", "Comments", "Phone_Number", "Acceptance_Criteria"])
+
+    if selected_table == "Home":
+        st.write("Welcome to the User Page. Select a table from the dropdown to perform operations.")
+
+    elif selected_table == "Sprint":
+        display_sprint_table()
+
+    elif selected_table == "Story":
+        display_story_table()
+ 
+    elif selected_table == "Attachement":
+        display_attachement_table()
+        attachment_operations()
+
+    elif selected_table == "Scrum_Master":
+        display_scrum_master_table()
+
+    elif selected_table == "Project":
+        display_project_table()
+
+    elif selected_table == "Team_Member":
+        display_team_member_table()
+
+    elif selected_table == "Team":
+        display_team_table()
+    
+    elif selected_table == "Task":
+        display_task_table()
+
+    elif selected_table == "Scrum_Meeting":
+        display_scrum_meeting_table()
+    
+    elif selected_table == "Retrospective_Meeting":
+        display_retrospective_meeting_table()
+
+    elif selected_table == "Comments":
+        display_comments_table()
+        comments_operations()
+    
+    elif selected_table == "Phone_Number":
+        display_phone_number_table()
+        phone_number_operations()
+    
+    elif selected_table == "Acceptance_Criteria":
+        display_acceptance_criteria_table()
+
 
 def admin_page():
     st.title("Admin Page")
