@@ -198,7 +198,6 @@ def is_admin_logged_in():
     
     return entered_password == admin_password
 
-
 def admin_page():
     st.title("Admin Page")
 
@@ -344,7 +343,6 @@ def admin_page():
     elif selected_table == "Acceptance_Criteria":
         display_acceptance_criteria_table()
         acceptance_criteria_operations()
-
 
 def display_user_table():
     connection = create_connection()
