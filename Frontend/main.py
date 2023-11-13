@@ -306,16 +306,6 @@ def delete_user(user_id):
     connection.close()
     st.success("User deleted successfully!")
 
-
-    connection = create_connection()
-
-    # Delete data from Sprint table
-    delete_query = f"DELETE FROM Sprint WHERE Sprint_ID = {sprint_id}"
-    execute_query(connection, delete_query)
-
-    st.success("Sprint deleted successfully!")
-    connection.close()
-
 def display_sprint_table():
     connection = create_connection()
     query = "SELECT * FROM Sprint"
