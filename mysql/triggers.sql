@@ -1,4 +1,5 @@
--- Active: 1697515802955@@127.0.0.1@3306@sprinthub
+
+-- Trigger to ensure end date is after start date for sprints
 DELIMITER //
 CREATE TRIGGER EnsureSprintEndDateAfterStartDate
 BEFORE INSERT ON Sprint
@@ -37,20 +38,19 @@ DELIMITER ;
 
 
 
-/*
+
 DELIMITER //
 CREATE TRIGGER RoleChangeAuthorization
 BEFORE UPDATE ON User
 FOR EACH ROW
 BEGIN
-    IF NEW.Role <> OLD.Role AND OLD.Role NOT IN ('Admin', 'Manager') THEN
+    IF NEW.Role <> OLD.Role AND OLD.Role NOT IN ('Admin') THEN
         SIGNAL SQLSTATE '45000'
         SET MESSAGE_TEXT = 'Unauthorized to change user role';
     END IF;
 END;
 //
 DELIMITER ;
-*/
 
 
 
@@ -112,5 +112,11 @@ BEGIN
 END;
 //
 DELIMITER ;
+
+
+-- Add Project_ID column to Sprint table as a foreign key
+ALTER TABLE Sprint
+ADD COLUMN Project_ID int,
+ADD FOREIGN KEY (Project_ID) REFERENCES Project(Project_ID);
 
 
