@@ -162,6 +162,14 @@ def user_page():
 
         if selected_table == "Home":
             st.write("Welcome to the User Page. Select a table from the dropdown to perform operations.")
+            st.subheader("Procedure to get all the Tasks Assigned to You")
+            username_in = st.text_input("Enter Your Username")
+            if st.button("Get all The Tasks Assigned to You"):
+                connection = create_connection()
+                sql_query = f"CALL GetUserTasks('{username_in}');"
+                result = execute_select_query(connection, sql_query)
+                connection.close()
+                st.table(result)
 
         elif selected_table == "Sprint":
             display_sprint_table()
