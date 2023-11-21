@@ -173,7 +173,7 @@ def user_page():
             
             st.markdown("---") 
 
-            st.subheader("Correlated Queries")
+            st.subheader("Queries")
             st.write("Selects project names from the 'Project' table that have surpassed their deadlines and are not Completed.")
 
             if st.button("Get Project Names"):
@@ -268,6 +268,27 @@ def admin_page():
         if st.button("Calculate the total Budget of the Project"):
             total_budget = stored_function(project_id)
             st.write(f"The total budget of the project is {total_budget}")
+
+        st.markdown("---") 
+
+        st.subheader("Queries")
+        st.write("Retrieves Sprint names, associated Story names, and their respective attachment names.")
+
+        if st.button("Get Sprint, Story and Attachment Names"):
+            connection = create_connection()
+            sql_query = f"SELECT s.Sprint_Name, st.Story_Name, a.Attachement_Name FROM Sprint s LEFT JOIN Story st ON s.STORY_ID = st.STORY_ID LEFT JOIN Attachement a ON st.Attachement_ID = a.Attachement_ID;"
+            result = execute_select_query(connection, sql_query)
+            connection.close()
+            st.table(result)
+        
+        st.write("Retrieves project and sprint names along with the count of associated stories for each project in the system.")
+
+        if st.button("Get Project and Sprint Names"):
+            connection = create_connection()
+            sql_query = f"SELECT p.Project_Name, s.Sprint_Name, COUNT(st.Story_ID) AS Story_Count FROM Project p LEFT JOIN Sprint s ON p.Project_Sprint_ID = s.Sprint_ID LEFT JOIN Story st ON s.STORY_ID = st.Story_ID GROUP BY p.Project_ID, s.Sprint_ID ORDER BY p.Project_Name, s.Sprint_Name;"
+            result = execute_select_query(connection, sql_query)
+            connection.close()
+            st.table(result)
 
     if selected_table == "User":
         display_user_table()
