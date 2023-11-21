@@ -208,6 +208,13 @@ def user_page():
         st.warning("Invalid username or password. Please sign up first.")
         st.warning("Redirecting to Signup page...")    
 
+def stored_function(project_id):
+    connection = create_connection()
+    sql_query = f"SELECT GetTotalProjectBudget({project_id}) as Total_Budeget;"
+    result = execute_select_query(connection, sql_query)
+    connection.close()
+    return result[0]["Total_Budeget"]
+
 def is_admin_logged_in():
     admin_password = "Anshul@2004"
     entered_password = st.text_input("Enter Admin Password", type="password")
@@ -227,7 +234,11 @@ def admin_page():
 
     if selected_table == "Home":
         st.write("Welcome to the Admin Page. Select a table from the dropdown to perform CRUD operations.")
-
+        st.subheader("Function to Calculate the total budget of the project")
+        project_id = st.number_input("Enter the Project ID")
+        if st.button("Calculate the total Budget of the Project"):
+            total_budget = stored_function(project_id)
+            st.write(f"The total budget of the project is {total_budget}")
 
     if selected_table == "User":
         display_user_table()
