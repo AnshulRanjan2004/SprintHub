@@ -729,7 +729,7 @@ def display_project_table():
 def add_project(Project_Name, Project_Description, Project_Status, Project_Start_Date, Project_End_Date, Project_Story_ID, Project_Sprint_ID):
     # Function to add a new Project
     connection = create_connection()
-    query = f"INSERT INTO Project (Project_Name, Project_Description, Project_Status, Project_Start_Date, Project_End_Date, Project_Story_ID, Project_Sprint_ID, Budget) " \
+    query = f"INSERT INTO Project (Project_Name, Project_Description, Project_Status, Project_Start_Date, Project_End_Date, Project_Story_ID, Project_Sprint_ID) " \
             f"VALUES ('{Project_Name}', '{Project_Description}', '{Project_Status}', '{Project_Start_Date}', '{Project_End_Date}', {Project_Story_ID or 'NULL'}, {Project_Sprint_ID or 'NULL'})"
     execute_query(connection, query)
     connection.close()
