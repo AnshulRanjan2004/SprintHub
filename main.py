@@ -170,6 +170,27 @@ def user_page():
                 result = execute_select_query(connection, sql_query)
                 connection.close()
                 st.table(result)
+            
+            st.markdown("---") 
+
+            st.subheader("Correlated Queries")
+            st.write("Selects project names from the 'Project' table that have surpassed their deadlines and are not Completed.")
+
+            if st.button("Get Project Names"):
+                connection = create_connection()
+                sql_query = f"SELECT Project_Name FROM Project p WHERE p.Project_End_Date < CURDATE() AND p.Project_Status <> 'Completed';"
+                result = execute_select_query(connection, sql_query)
+                connection.close()
+                st.table(result)
+            
+            st.write("Users that are linked to more than one project through their assigned sprint.")
+
+            if st.button("Get Users"):
+                connection = create_connection()
+                sql_query = f"SELECT u.Name AS User_Name FROM User u WHERE ( SELECT COUNT(DISTINCT p.Project_ID) FROM Project p WHERE p.Project_Sprint_ID = u.Sprint_ID) > 1"
+                result = execute_select_query(connection, sql_query)
+                connection.close()
+                st.table(result)
 
         elif selected_table == "Sprint":
             display_sprint_table()
