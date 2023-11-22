@@ -1,6 +1,7 @@
 import streamlit as st
 import mysql.connector
 from PIL import Image
+import pandas as pd
 
 def create_connection():
     return mysql.connector.connect(
@@ -141,6 +142,21 @@ def home_page():
         ,
         unsafe_allow_html=True
     )
+    st.subheader('SQL Query Executor')
+
+    query = st.text_area('Enter your SQL query:', '')
+    print(query)
+    # Execute query on button click
+    if st.button('Execute'):
+        conn = create_connection()
+        if query:
+            result = execute_select_query(conn, query)
+            if result:
+                df = pd.DataFrame(result)
+                st.write(df)
+            else:
+                st.write('No results to display')
+        conn.close()
 
 def user_page():
     st.title("User Page")
