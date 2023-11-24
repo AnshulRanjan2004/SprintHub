@@ -30,3 +30,6 @@ The major system features:\
 •	Comments and Attachments: Users can discuss and share files within tasks and stories.\
 •	Meetings Management: Users can schedule and document key project meetings.\
 •	Task and User Story Management: Users can create, assign, and track tasks and user stories.\
+
+![image](https://github.com/AnshulRanjan2004/SprintHub/assets/91585064/ca5f0324-0c5b-436b-80d9-f609a0f65733)
+
